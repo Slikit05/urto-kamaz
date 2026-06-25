@@ -1,0 +1,11 @@
+mixin breadcrumbs({items})
+  .breadcrumbs
+    .breadcrumbs__list
+      each item in items
+        if item.url
+          .breadcrumbs__item
+            a.breadcrumbs__link(href=item.url)=item.title
+            +icon('arrow')
+        else
+          .breadcrumbs__item
+            span.breadcrumbs__link=item.title

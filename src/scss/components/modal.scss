@@ -1,0 +1,159 @@
+@use "../tools/functions" as *;
+
+nobr {
+	display: inline;
+}
+
+.modal {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 110;
+	display: none;
+	overflow: hidden;
+
+	&--open {
+		display: block;
+	}
+
+	&__overlay {
+		height: 100%;
+		width: 100%;
+		background-color: rgba($color: #002D52, $alpha: 0.5);
+		overflow-y: auto;
+		text-align: center;
+		white-space: nowrap;
+		padding: 15px;
+
+		@media (max-width: 767px) {
+			padding: 10px;
+		}
+
+		&::before {
+			content: '';
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
+			font-size: 0;
+			line-height: 0;
+			width: 0;
+
+			@media (max-width: 767px) {
+				margin-left: -4px;
+			}
+		}
+	}
+
+	&__block {
+		background-color: color('white');
+		margin: 0;
+		display: inline-block;
+		vertical-align: middle;
+		text-align: left;
+		width: 100%;
+		font-size: 0;
+		line-height: 0;
+		padding: 40px 46px;
+		position: relative;
+		white-space: pre-wrap;
+		max-width: 768px;
+
+		@media (max-width: 767px) {
+			padding: 24px 20px;
+		}
+
+		* {
+			font-size: initial;
+			line-height: normal;
+			white-space: normal;
+			vertical-align: initial;
+		}
+	}
+
+	&__up {
+		margin-bottom: 24px;
+		vertical-align: inherit;
+
+		@media (max-width: 767px) {
+			margin-bottom: 12px;
+		}
+	}
+
+	&__down {
+		display: block;
+		vertical-align: inherit;
+	}
+
+	&__caption {
+		font-weight: 700;
+		font-size: 32px;
+		line-height: 40px;
+		color: color('gray', 'Graphit');
+		margin-bottom: 15px;
+		text-transform: uppercase;
+
+		@media (max-width: 767px) {
+			font-size: 24px;
+			line-height: 32px;
+			margin-bottom: 11px;
+		}
+	}
+	
+	&__sub-caption {
+		font-size: 16px;
+		line-height: 24px;
+		color: color('gray', '70');
+	}
+}
+
+.modal .close {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	background-color: color('yellow', 'Gold');
+  
+	@media (max-width: 767px) {
+		top: -20px;
+		// right: vw(15);
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		top: 7px;
+		bottom: 7px;
+		left: calc(50% - 1px);
+		width: 2px;
+		background-color: color('white');
+		transition: transform 0.3s ease-in-out;
+	}
+
+	&::after {
+		transform: rotate(45deg);
+	}
+
+	&::before {
+		transform: rotate(-45deg);
+	}
+
+	@media (hover: hover) {
+    &:hover {
+      &::before {
+				transform: rotate(-45deg) scale(1.3);
+			}
+			&::after {
+        transform: rotate(45deg) scale(1.3);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+	
+}

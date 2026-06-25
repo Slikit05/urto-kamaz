@@ -1,0 +1,161 @@
+extends ../layouts/base.pug
+
+block vars
+  -
+    const swiper = true
+  -
+    const map = true
+  - 
+    const breadcrumbs = [
+      {
+        url: '#',
+        title: 'Главная'
+      },
+      {
+        title: 'Контакты'
+      }
+    ]
+  -
+    const departments = [
+      {
+        caption: 'Отдел продаж',
+        tell: '+7 (928) 404-90-20',
+        email: 'eremenko@urto-truck.ru',
+      },
+      {
+        caption: 'Отдел сервиса',
+        tell: '+7 (928) 404-90-60',
+        email: 'service@urto-truck.ru',
+      },
+      {
+        caption: 'Отдела продаж зап. частей',
+        tell: '+7 (928) 404-60-20',
+        email: 'opt@urto-truck.ru',
+      },
+      {
+        caption: 'Отдел гарантийного ремонта',
+        tell: '+7 (928) 404-46-40',
+        email: 'beskopilnaya@urto-truck.ru',
+      },
+      {
+        caption: 'Отдел по работе с клиентами',
+        tell: '+7 (928) 333-23-53',
+        email: 'klient-m@urto-truck.ru',
+      },
+      {
+        caption: 'Отдел МКУ - кузовной ремонт',
+        tell: '+7 (999) 414-84-54',
+        email: 'silin@urto-truck.ru',
+      },
+      {
+        caption: 'Эвакуатор',
+        tell: '+7 (928) 404-80-40',
+      },
+    ]
+
+block body
+  section.bread-crumbs
+    .container
+      +breadcrumbs({
+        items: breadcrumbs,
+      })
+
+  section.line-title-page.line-title-page_change-offset-1
+    .container
+      .line-title-page__wrapper
+        h1.title-page Контакты
+
+
+  section.section
+    .container
+      .sm-container
+        .section__content
+          .contacts
+            .contacts__grid.contacts__grid_change
+              .contacts__left
+                .contacts__map#map
+              .contacts__right
+                .contacts__row
+                  span.contacts__description Адрес:
+                  .contacts__flex
+                    .contacts__icon
+                      img(src="img/svg/house.svg" alt="")
+                    p.contacts__text 350087, Россия, Краснодарский край, г. Краснодар, Ростовское шоссе 47
+                .contacts__row
+                  span.contacts__description Телефоны:
+                  .contacts__flex
+                    .contacts__icon
+                      img(src="img/svg/phone.svg" alt="")
+                    p.contacts__text <nobr>8 800 222 04 09;</nobr> <nobr>+7 (928) 404-90-60;</nobr> <nobr>+7 (861) 225-93-75</nobr>
+                .contacts__row
+                  span.contacts__description Отдел продаж:
+                  .contacts__flex
+                    .contacts__icon
+                      img(src="img/svg/cart.svg" alt="")
+                    p.contacts__text +7 (928) 404-90-20
+                .contacts__wrap-btn
+                  +button({
+                    text: 'Скачать реквизиты',
+                    theme: 'yellow',
+                    elemHref: '#',
+                    svgIconEnd: 'download',
+                    className: 'download-icon'
+                  })
+                  +button({
+                    text: 'Написать сообщение',
+                    theme: 'yellow',
+                    elemHref: '#',
+                    svgIconEnd: 'mail',
+                    className: 'mail-icon js-showModal',
+                    attrs: {
+                      'data-click-modal': 'MessageModal'
+                    }
+                  })
+
+  section.section.bg-gray.inner-offset-slider
+    .container
+      .row-title.section__up
+        .row-title__flex
+          h2.title-md Отделы компании
+      .grid-card-four
+        each item in departments
+          +card-departments({
+            caption: item.caption,
+            tell: item.tell,
+            email: item.email,
+          })
+
+  +modal({
+    className: 'book-modal', 
+    idModal: 'MessageModal',
+    caption: 'Написать Сообщение',
+    subCaption: 'Заполните простую форму и наши специалисты свяжутся с Вами в ближайшее время'
+  })
+    .form
+      form.form__container(action='')
+        .form__wrapper
+          .form__field
+            span.form__description Ваше имя:
+            input.form__input(type='text' name='name' placeholder='Представьтесь, пожалуйста') 
+          .form__field
+            span.form__description Телефон:<span class='yellow'>*</span>
+            input.form__input(type='tel' name='phone' placeholder='Ваш телефон' required)
+          .form__field.form__field_lg
+            span.form__description Сообшение:<span class='yellow'>*</span>
+            textarea.form__input(name='message' placeholder='Введите текст сообщения' required)
+        .form__row
+          .form__checkbox
+            +checkbox({
+              text: 'Соглашаюсь с <a href="#">политикой конфиденциальности</a>'
+            })
+          +button({
+            text: 'отправить',
+            theme: 'yellow',
+            svgIconEnd: 'mail',
+            className: 'mail-icon',
+            attrs: {
+              type: 'submit'
+            }
+          })
+        .form__bottom
+          span.form__info-text Поля помеченные “<span class='yellow'>*</span>” обязательны для заполнения

@@ -1,0 +1,125 @@
+extends ../layouts/base.pug
+
+block vars
+  - 
+    const breadcrumbs = [
+      {
+        url: '#',
+        title: 'Главная'
+      },
+      {
+        url: '#',
+        title: 'Каталог автотехники'
+      },
+      {
+        title: 'Автотехника'
+      }
+    ]
+
+  - 
+    const equipmentInStock = [
+      {
+        img: 'card-img-1'
+      },
+      {
+        img: 'card-img-2'
+      },
+      {
+        img: 'card-img-3'
+      },
+      {
+        img: 'card-img-1'
+      },
+      {
+        img: 'card-img-2'
+      },
+      {
+        img: 'card-img-3'
+      },
+      {
+        img: 'card-img-1'
+      },
+      {
+        img: 'card-img-2'
+      },
+      {
+        img: 'card-img-3'
+      },
+      {
+        img: 'card-img-1'
+      },
+      {
+        img: 'card-img-2'
+      },
+      {
+        img: 'card-img-3'
+      },
+    ]
+
+block body
+  .gray-bg
+    section.bread-crumbs
+      .container
+        +breadcrumbs({
+          items: breadcrumbs,
+        })
+
+    section.line-title-page
+      .container
+        .line-title-page__wrapper
+          h1.title-page Автотехника
+
+    section.content-page
+      .container
+        .content-page__grid
+          .content-page__sidebar
+            +filter({})
+          .content-page__wrapper
+            .grid-card
+              a.card-categorys(href="") 
+                img.card-categorys__img(src="img/card-categorys-1.png", alt="")
+                span.card-categorys__caption Бортовые автомобили
+              a.card-categorys(href="") 
+                img.card-categorys__img(src="img/card-categorys-2.png", alt="")
+                span.card-categorys__caption Самосвалы
+              a.card-categorys(href="") 
+                img.card-categorys__img(src="img/card-categorys-3.png", alt="")
+                span.card-categorys__caption Седельные тягочи
+            .grid-card
+              each item in equipmentInStock
+                +card-kamaz({
+                  img: item.img
+                }) 
+            
+            +pagination({})
+            +modal({
+              className: 'book-modal', 
+              idModal: 'BookModal',
+              caption: 'Забронировать',
+              subCaption: 'Заполните простую форму и наши специалисты свяжутся с Вами в ближайшее время'
+            })
+              .form
+                form.form__container(action='')
+                  .form__wrapper
+                    .form__field
+                      span.form__description Ваше имя:
+                      input.form__input(type='text' name='name' placeholder='Представьтесь, пожалуйста') 
+                    .form__field
+                      span.form__description Телефон:<span class='yellow'>*</span>
+                      input.form__input(type='tel' name='phone' placeholder='Ваш телефон' required)
+                  .form__row
+                    .form__checkbox
+                      +checkbox({
+                        text: 'Соглашаюсь с <a href="#">политикой конфиденциальности</a>'
+                      })
+                    +button({
+                      text: 'отправить',
+                      theme: 'yellow',
+                      svgIconEnd: 'mail',
+                      className: 'mail-icon',
+                      attrs: {
+                        type: 'submit'
+                      }
+                    })
+                  .form__bottom
+                    span.form__info-text Поля помеченные “<span class='yellow'>*</span>” обязательны для заполнения

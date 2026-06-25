@@ -1,0 +1,27 @@
+include ../components/import
+
+block vars
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    block styles
+      if swiper === true
+        link(href="vendor/css/swiper-bundle.min.css" rel='stylesheet')
+      link(href="css/styles.min.css" rel='stylesheet')
+      
+    title= title || 'Мой сайт'
+
+  body
+    +header({})
+    main
+      block body
+    if swiper === true
+      script(src="vendor/js/swiper-bundle.min.js")
+    if map === true
+      script(src="https://api-maps.yandex.ru/2.1/?apikey=fc075a8b-9c59-4b8d-b8cb-0172442a14a7&lang=ru_RU")
+    script(src="js/main.js")
+
+    +footer({})

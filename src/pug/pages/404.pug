@@ -1,0 +1,26 @@
+extends ../layouts/base.pug
+
+block vars
+  
+
+block body
+  section.not-found
+    .not-found__container
+      .not-found__bg
+        +picture({
+          'x1': 'img/not-found-bg.jpg',
+          'x2': 'img/not-found-bg@2x.jpg',
+          'tablet': 'img/not-found-bg_tablet.jpg',
+          'mob': 'img/not-found-bg_mobile.jpg',
+        })
+      .container
+        .not-found__wrap-text
+          h1.not-found__title Ай! Ошибка 404
+          span.not-found__subtitle Неправильно набран адрес, или такой страницы не существует.
+          +button({
+            text: 'Перейти на главную',
+            theme: 'yellow',
+            elemHref: '#',
+            svgIconEnd: 'share',
+            className: 'share-icon'
+          })

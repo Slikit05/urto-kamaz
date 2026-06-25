@@ -1,0 +1,161 @@
+@use "../tools/functions" as *;
+
+.new-accordion {
+  // background-color: color("black", "80");
+  border-radius: 10px;
+  overflow: hidden;
+  transition: background-color 0.3s ease-in-out;
+
+  @media (hover: hover) {
+    &:hover {
+      // background-color: color("black", "90");
+
+      .new-accordion__wrap-arrow {
+        // background-color: color("gray", "60");
+
+        svg {
+          // color: color("white");
+        }
+      }
+    }
+  }
+
+  &__head {
+    padding: 16px 16px 16px 32px;
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    cursor: pointer;
+
+    * {
+      pointer-events: none;
+    }
+  }
+
+  &__caption {
+    align-self: center;
+    font-size: 26px;
+    line-height: 1;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+
+  &__wrap-arrow {
+    // background-color: color("gray", "50");
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out;
+    flex-shrink: 0;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      // color: color("gray", "60");
+      transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+  }
+
+  &__dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  &__content {
+    text-indent: 32px;
+    font-size: 18px;
+    line-height: 1.64;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    // color: color("white");
+    padding: 0 32px 16px;
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-weight: 500;
+      font-size: 18px;
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    p {
+      margin-bottom: 8px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      // color: color("blue");
+      text-decoration: underline;
+      font-weight: 500;
+    }
+  }
+
+  &.accordion_opened {
+    .new-accordion__wrap-arrow {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .new-accordion {
+    background-color: transparent;
+    border-radius: 0;
+    // border-bottom: 1px solid color("black", "80");
+
+    &__head {
+      padding: 16px 0;
+    }
+
+    &__caption {
+      font-size: 18px;
+      line-height: 1;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    &__content {
+      padding: 0 0 14px;
+      text-indent: 0;
+      font-size: 14px;
+      line-height: 1.64;
+      font-weight: 300;
+      letter-spacing: 0.04em;
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-weight: 300;
+        font-size: 14px;
+        margin-bottom: 0;
+        line-height: 1.64;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+}

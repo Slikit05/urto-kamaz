@@ -1,0 +1,25 @@
+mixin card-review({text, btn})
+  .card-review.review-card
+    .card-review__wrapper
+      span.card-review__name Имя автора комментария
+      .card-review__wrap-text
+        .card-review__text.review-text
+          p !{text}
+        .card-review__arrow.toggle-btn
+          svg(viewBox="0 0 25 14" xmlns="http://www.w3.org/2000/svg")
+            path(d="M17 12.7071L23 6.70711M23 6.70711L17 0.707107" stroke="currentColor" stroke-width="2")
+            path(class="arrow-tail" d="M23 6.70711 L0 6.70711" stroke="currentColor" stroke-width="2" stroke-dasharray="23" stroke-dashoffset="23")
+    .card-review__bottom
+      .card-review__left
+        .card-review__row
+          span.card-review__caption авто: 
+          span.card-review__value КАМАЗ 4308-69 8,5 м.
+        .card-review__row
+          span.card-review__caption пробег: 
+          span.card-review__value 101 000 км
+      .card-review__right
+        if btn === true
+          +tag({
+            text: 'полный отзыв',
+            className: 'yellow',
+          })

@@ -1,0 +1,151 @@
+@use "../tools/functions" as *;
+
+.new-button {
+  border: none;
+  outline: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 12px 24px;
+  background-color: transparent;
+  text-decoration: none;
+  user-select: none;
+  transition: 0.3s color ease-out, 0.3s border ease-out,
+    0.3s background-color ease-out;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+  }
+
+  * {
+    pointer-events: none;
+  }
+
+  .new-button__text {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: color("white");
+    position: relative;
+    z-index: 1;
+    margin: 0;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__icon-end {
+    margin-left: 8px;
+  }
+
+  svg {
+    position: relative;
+    z-index: 1;
+    width: 12px;
+    height: 12px;
+  }
+
+  &.mail-icon {
+    svg {
+      width: 20px;
+      height: 18px;
+    }
+  }
+
+  &.download-icon {
+    svg {
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  &.share-icon {
+    svg {
+      width: 17px;
+      height: 17px;
+    }
+  }
+
+  &.phone-2-icon {
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &.procent-icon {
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &.gard-icon {
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &.whatsapp-2-icon {
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &.cookie-check-icon {
+    svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  &.apply-icon {
+    svg {
+      width: 17px;
+      height: 17px;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      &::before {
+        transform: scale(1.06);
+      }
+    }
+  }
+}
+
+.new-button-theme_yellow {
+  color: color('white');
+  &::before {
+    background-color: color("yellow", "Gold");
+  }
+}
+
+.new-button-theme_green {
+  &::before {
+    background-color: color("green");
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .new-button {
+    width: 100%;
+    padding: 12px;
+  }
+}

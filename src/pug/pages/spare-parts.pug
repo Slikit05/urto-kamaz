@@ -1,0 +1,69 @@
+extends ../layouts/base.pug
+
+block vars
+  -
+    const swiper = true
+  - 
+    const breadcrumbs = [
+      {
+        url: '#',
+        title: 'Главная'
+      },
+      {
+        title: 'Запасные части'
+      }
+    ]
+  - 
+    const firstScreenSlider = [
+      {
+        img: 'spare-parts-1'
+      },
+      {
+        img: 'spare-parts-2'
+      },
+      {
+        img: 'spare-parts-3'
+      },
+      {
+        img: 'spare-parts-1'
+      },
+      {
+        img: 'spare-parts-2'
+      },
+      {
+        img: 'spare-parts-3'
+      },
+    ]
+
+block body
+  section.bread-crumbs
+    .container
+      +breadcrumbs({
+        items: breadcrumbs,
+      })
+
+  section.line-title-page.line-title-page_change-offset-1
+    .container
+      .line-title-page__wrapper
+        h1.title-page Запасные части
+  
+  +first-slider({
+    arr: firstScreenSlider,
+    className: 'change-slider spare-parts-first-screen'
+  })
+
+  section.content-page
+    .container
+      .sm-container
+        .wrapper-text-area
+          .text-area
+            p Компания &laquo;ЮРТО-ТРАК&raquo; официальный дилер MAN, SITRAK, HOWO, Dongfeng, FAW, BEINBEN, ТОНАР, HYVA. В&nbsp;наличии&nbsp;большой&nbsp;ассортимент новых запасных частей на&nbsp;тягачи европейских и&nbsp;китайских брендов, а&nbsp;также полуприцепы. Компания ЮРТО-ТРАК всегда готова предложить своим клиентам не&nbsp;только услуги станции и&nbsp;оригинальные запасные части, но&nbsp;и&nbsp;оригинальные масла, аккумуляторы и&nbsp;аксессуары.
+            p На&nbsp;все оригинальные запасные части распространяется гарантия в&nbsp;соответствии с&nbsp;гарантийной политикой каждого из&nbsp;представленных брендов.
+            p Менеджеры ЮРТО-ТРАК всегда готовы помочь с&nbsp;подбором запасных частей на&nbsp;все представленные бренды, а&nbsp;также <span class="georgia-font">VOLVO</span>, Renault, DAF, Mercedes Benz. Предложим все варианты для решения возникших проблем, поможем подобрать не&nbsp;только оригинальные запасные части, но&nbsp;и&nbsp;их&nbsp;аналоги.
+            p Оперативные срок поставки запасных частей под заказ от&nbsp;1&nbsp;до&nbsp;5&nbsp;рабочих дней. Так&nbsp;же возможен заказ любых запасных частей из&nbsp;Европы и&nbsp;Китая.
+          +button({
+            text: 'заказать запасные части',
+            theme: 'yellow',
+            elemHref: '#',
+            svgIconEnd: 'phone-2',
+          })      

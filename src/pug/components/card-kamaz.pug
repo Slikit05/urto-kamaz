@@ -1,0 +1,42 @@
+mixin card-kamaz({img})
+  .card-kamaz
+    a.card-kamaz__wrapper(href="")
+      .card-kamaz__line
+        span.card-kamaz__name Пример названия грузовика
+        .card-kamaz__wrap-arrow
+          svg(viewBox="0 0 25 14" xmlns="http://www.w3.org/2000/svg")
+            path(d="M17 12.7071L23 6.70711M23 6.70711L17 0.707107" stroke="currentColor" stroke-width="2")
+            path(class="arrow-tail" d="M23 6.70711 L0 6.70711" stroke="currentColor" stroke-width="2" stroke-dasharray="23" stroke-dashoffset="23")
+      .card-kamaz__wrap-img
+        +picture({
+          'x1': 'img/' + img + '.jpg',
+          'x2': 'img/' + img + '@2x.jpg',
+        })
+      .card-kamaz__wrap-text
+        .card-kamaz__row
+          span.card-kamaz__caption Двигатель: 
+          span.card-kamaz__text КАМАЗ 667.513-250
+        .card-kamaz__row
+          span.card-kamaz__caption Мощность:
+          span.card-kamaz__text 250 л.с.
+        .card-kamaz__row
+          span.card-kamaz__caption Грузоподъемность:
+          span.card-kamaz__text 5,5 т
+        .card-kamaz__row
+          span.card-kamaz__caption КПП:
+          span.card-kamaz__text 1310ТО (аналог ZF9)
+        .card-kamaz__row
+          span.card-kamaz__caption Колесная формула:
+          span.card-kamaz__text 4х2
+    .card-kamaz__bottom
+      span.card-kamaz__price 7 300 000 ₽
+      .card-kamaz__flex
+        +tag({
+          text: 'забронировать',
+          className: 'blue js-showModal',
+          showModal: 'BookModal',
+        })
+        +tag({
+          text: 'подробнее',
+          className: 'yellow',
+        }) 

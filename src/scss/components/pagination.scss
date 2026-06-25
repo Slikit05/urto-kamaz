@@ -1,0 +1,181 @@
+@use "../tools/functions" as *;
+
+.pagination {
+  margin-top: 51px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 48px;
+
+  &__button {
+    background-color: color("yellow", "Gold");
+    padding: 12px 25px;
+    display: flex;
+    align-items: center;
+    color: color("white");
+    cursor: pointer;
+
+    &.previous {
+      .pagination__arrow {
+        transform: rotate(180deg);
+      }
+    }
+
+    span {
+      font-size: 14px;
+      line-height: 24px;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        .pagination__arrow {
+          width: 20px;
+        }
+
+        &.previous .pagination__arrow {
+          margin-right: 8px;
+        }
+
+        &.next .pagination__arrow {
+          margin-left: 8px;
+        }
+
+        svg {
+          .arrow-tail {
+            stroke-dashoffset: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__arrow {
+    width: 14px;
+    height: 14px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: calc(50% - 10px);
+      right: 0;
+
+      .arrow-tail {
+        transition: stroke-dashoffset 0.3s ease-in-out;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    margin: 0 28px;
+  }
+
+  &__item {
+    padding: 0 4px;
+  }
+
+  &__link {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    color: color("gray", "Graphit");
+    width: 48px;
+    height: 48px;
+    border: 1px solid color("gray", "80");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+
+    &.is-active {
+      background-color: color("blue", "DarkBlue");
+      color: color("white");
+      border-color: color("blue", "DarkBlue");
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: color("blue", "DarkBlue");
+        color: color("white");
+        border-color: color("blue", "DarkBlue");
+      }
+    }
+  }
+
+  &__dots {
+    font-size: 14px;
+    line-height: 24px;
+    color: color("gray", "Graphit");
+    font-weight: 700;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .pagination {
+    margin-top: 42px;
+
+    &__button {
+      width: 48px;
+      height: 48px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+
+      span {
+        display: none;
+      }
+    }
+
+    &__arrow {
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .pagination {
+    margin-top: 40px; 
+    padding-bottom: 40px;
+
+    &__button {
+      width: 40px;
+      height: 40px;
+
+      &.previous {
+        .pagination__arrow {
+          margin-left: 4px;
+        }
+      }
+
+      &.next {
+        .pagination__arrow {
+          margin-right: 4px;
+        }
+      }
+    }
+
+    &__list {
+      margin: 0 6px;
+    }
+
+    &__dots,
+    &__link {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

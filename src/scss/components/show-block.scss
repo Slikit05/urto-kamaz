@@ -1,0 +1,131 @@
+@use "../tools/functions" as *;
+
+.show-block {
+  margin-bottom: 36px;
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__wrap-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+
+    picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__wrap-text {
+    min-height: 480px;
+    padding: 67px 128px 64px;
+    position: relative;
+    z-index: 1;
+    color: color("white");
+  }
+
+  &__logo {
+    max-width: 234px;
+    display: block;
+    margin-bottom: 35px;
+
+    picture {
+      display: block;
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: 700;
+    text-transform: uppercase;
+    max-width: 592px;
+    margin-bottom: 37px;
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .show-block {
+    margin-bottom: 34px;
+
+    &__wrap-text {
+      min-height: 360px;
+      padding: 44px 48px;
+    }
+
+    &__logo {
+      margin-bottom: 22px;
+    }
+
+    &__title {
+      font-size: 32px;
+      line-height: 40px;
+      max-width: 408px;
+      margin-bottom: 23px;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .show-block {
+    &__wrap-text {
+      padding: 32px 40px;
+      min-height: 272px;
+    }
+
+    &__logo {
+      max-width: 192px;
+      margin-bottom: 25px;
+    }
+
+    &__title {
+      font-size: 24px;
+      line-height: 32px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .show-block {
+    margin-bottom: 26px;
+
+    &__wrap-img {
+      position: static;
+    }
+
+    &__wrap-text {
+      padding: 20px 0 40px;
+      min-height: initial;
+      border-bottom: 1px solid color('gray', 'LightGrey');
+    }
+
+    &__logo {
+      margin-bottom: 13px;
+      max-width: 160px;
+    }
+
+    &__title {
+      font-size: 24px;
+      line-height: 30px;
+      color: color('gray', 'Graphit');
+      margin-bottom: 11px;
+    }
+  }
+}

@@ -1,0 +1,36 @@
+mixin first-slider({arr, className})
+  section.first-slider(class=className)
+    .first-slider__container.swiper.js-firstSlider
+      .first-slider__wrapper.swiper-wrapper
+        each item in arr
+          .first-slider__slide.swiper-slide
+            a.first-slider__item(href="") 
+              +picture({
+                'x1': 'img/' + item.img + '.jpg',
+                'x2': 'img/' + item.img + '@2x.jpg',
+              })
+    //- .first-slider__pagination.js-firstSliderPagination
+    
+    .first-slider__arrows
+      .container
+        .first-slider__flex-arrows
+          .first-slider__arrow.prev.js-firstSliderButtonPrev
+            svg(width="13" height="22" viewBox="0 0 13 22" xmlns="http://www.w3.org/2000/svg")
+              path(d="M11.4142 0.707108L1.41419 10.7071L11.4142 20.7071"     stroke="currentColor" fill="transparent" stroke-width="2")
+              path(class="arrow-tail" d="M1.41406 10.7071 L31.4141 10.7071" stroke="currentColor" stroke-width="2" stroke-dasharray="30" stroke-dashoffset="30")
+            .first-slider__arrow-mob
+              .first-slider__wrap-icon
+                svg(viewBox="0 0 26 10" xmlns="http://www.w3.org/2000/svg")
+                  path(d="M5.41406 8.70715L1.41406 4.70715M1.41406 4.70715L5.41406 0.707152" stroke="currentColor" stroke-width="2")
+                  path(class="arrow-tail" d="M1.41406 4.70715 L25.4141 4.70715" stroke="currentColor" stroke-width="2")
+              span Предыдущая
+          .first-slider__arrow.next.js-firstSliderButtonNext
+            svg(width="13" height="22" viewBox="0 0 13 22" xmlns="http://www.w3.org/2000/svg")
+              path(d="M11.4142 0.707108L1.41419 10.7071L11.4142 20.7071"     stroke="currentColor" fill="transparent" stroke-width="2")
+              path(class="arrow-tail" d="M1.41406 10.7071 L31.4141 10.7071" stroke="currentColor" stroke-width="2" stroke-dasharray="30" stroke-dashoffset="30")
+            .first-slider__arrow-mob
+              span Следующая
+              .first-slider__wrap-icon
+                svg(viewBox="0 0 26 10" xmlns="http://www.w3.org/2000/svg")
+                  path(d="M5.41406 8.70715L1.41406 4.70715M1.41406 4.70715L5.41406 0.707152" stroke="currentColor" stroke-width="2")
+                  path(class="arrow-tail" d="M1.41406 4.70715 L25.4141 4.70715" stroke="currentColor" stroke-width="2")

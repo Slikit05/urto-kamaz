@@ -1,0 +1,19 @@
+mixin navigation-slider({classPrev, classNext, pagination, classMod})
+  .navigation-slider(class=classMod)
+    .navigation-slider__flex
+      .navigation-slider__arrow.prev(class=classPrev)
+        .navigation-slider__wrap-icon
+          svg(viewBox="0 0 26 10" xmlns="http://www.w3.org/2000/svg")
+            path(d="M5.41406 8.70715L1.41406 4.70715M1.41406 4.70715L5.41406 0.707152" stroke="currentColor" stroke-width="2")
+            path(class="arrow-tail" d="M1.41406 4.70715 L25.4141 4.70715" stroke="currentColor" stroke-width="2" stroke-dasharray="32" stroke-dashoffset="8")
+        span Предыдущая
+      if pagination
+        .navigation-slider__pagination
+          .navigation-slider__fraction(class=pagination)
+
+      .navigation-slider__arrow.next(class=classNext)
+        span Следующая
+        .navigation-slider__wrap-icon
+          svg(viewBox="0 0 26 10" xmlns="http://www.w3.org/2000/svg")
+            path(d="M5.41406 8.70715L1.41406 4.70715M1.41406 4.70715L5.41406 0.707152" stroke="currentColor" stroke-width="2")
+            path(class="arrow-tail" d="M1.41406 4.70715 L25.4141 4.70715" stroke="currentColor" stroke-width="2" stroke-dasharray="32" stroke-dashoffset="8")

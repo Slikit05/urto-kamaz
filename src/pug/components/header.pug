@@ -1,0 +1,177 @@
+mixin header({arr})
+  - 
+    const catalog = [
+      {
+        title: 'Автотехника', 
+        subArr: [
+          {
+            img: 'img/catalog/1.png',
+            text: 'Бортовые автомобили'
+          },
+          {
+            img: 'img/catalog/2.png',
+            text: 'Самосвалы'
+          },
+          {
+            img: 'img/catalog/3.png',
+            text: 'Седельные тягочи'
+          },
+        ]
+      },
+      {
+        title: 'Спецавтотехника', 
+        subArr: [
+          {
+            img: 'img/catalog/4.png',
+            text: 'Автокраны'
+          },
+          {
+            img: 'img/catalog/5.png',
+            text: 'Автотопливозаправщики'
+          },
+          {
+            img: 'img/catalog/6.png',
+            text: 'Автобетоносмеситель'
+          },
+          {
+            img: 'img/catalog/7.png',
+            text: 'Автомобиль с КМУ'
+          },
+          {
+            img: 'img/catalog/8.png',
+            text: 'Автоцистерна'
+          },
+        ]
+      },
+      {
+        title: 'Прицепная техника', 
+        subArr: [
+          {
+            img: 'img/catalog/9.png',
+            text: 'Бортовые прицепы'
+          },
+          {
+            img: 'img/catalog/10.png',
+            text: 'Прицеп-зерновоз'
+          },
+          {
+            img: 'img/catalog/11.png',
+            text: 'Полуприцеп'
+          },
+          {
+            img: 'img/catalog/12.png',
+            text: 'Самосвальные прицепы'
+          },
+        ]
+      },
+      {
+        title: 'Автобусы', 
+        subArr: [
+          {
+            img: 'img/catalog/13.png',
+            text: 'Газовые автобусы'
+          },
+          {
+            img: 'img/catalog/14.png',
+            text: 'Городские автобусы'
+          },
+          {
+            img: 'img/catalog/15.png',
+            text: 'Междугородные автобусы'
+          },
+          {
+            img: 'img/catalog/16.png',
+            text: 'Пригородные автобусы'
+          },
+          {
+            img: 'img/catalog/17.png',
+            text: 'Электрический транспорт'
+          },
+        ]
+      },
+    ]
+
+  header.header
+    .header__container.js-fixe-header
+      .header__up
+        .container
+          .header__up-flex
+            .header__logo
+              img.logo(src='img/svg/logo.svg' alt='')
+            .header__flex
+              .header__left
+                span.header__name-site Юрто-Тракцентр
+                span.header__info-site Официальный дилер ПАО «КАМАЗ»
+              .header__right
+                .header__right-flex
+                  span.total-addres г. Краснодар, ул. Ростовское ш., 47
+                  a.link-tell(href="tel:88002220409") 
+                    +icon('phone')
+                    span 8 800 222 04 09
+                  a.header__social(href="") 
+                    +icon('whatsapp')
+                .burger
+                  .burger__line
+                  .burger__line
+                  .burger__line
+      .header__bottom
+        .container
+          nav.navigation
+            ul.navigation__list
+              li.navigation__item.navigation__item_static
+                a.navigation__link.navigation__link_white-line.is-active(href="") Каталог автотехники
+                  svg(width="18" height="10" viewBox="0 0 18 10" xmlns="http://www.w3.org/2000/svg")
+                    path(d="M12 8.70709L16 4.70709M16 4.70709L12 0.707092" stroke="currentColor" stroke-width="2")
+                    path(class="arrow-tail" d="M16 4.70709L0 4.70709" stroke="currentColor" stroke-width="2" stroke-dasharray="16" stroke-dashoffset="16")
+                .navigation__dropdown
+                  +vehicle-catalog({
+                    arr: catalog,
+                    noneTitle: true,
+                  })
+              li.navigation__item
+                a.navigation__link(href="") Сервис и гарантийные обязательства
+              li.navigation__item
+                a.navigation__link(href="") Запасные части
+              li.navigation__item
+                a.navigation__link(href="") Финансовый сервис
+              li.navigation__item
+                a.navigation__link(href="") Акции
+              li.navigation__item
+                a.navigation__link.navigation__link_white-line(href="") О компании
+                  svg(width="18" height="10" viewBox="0 0 18 10" xmlns="http://www.w3.org/2000/svg")
+                    path(d="M12 8.70709L16 4.70709M16 4.70709L12 0.707092" stroke="currentColor" stroke-width="2")
+                    path(class="arrow-tail" d="M16 4.70709L0 4.70709" stroke="currentColor" stroke-width="2" stroke-dasharray="16" stroke-dashoffset="16")
+                .navigation__dropdown
+                  ul.navigation__sub-list
+                    li.navigation__sub-item
+                      a.navigation__sub-link(href="")
+                        span Компания
+                        .navigation__sub-wrap-arrow
+                          svg(viewBox="0 0 25 14" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M17 12.7071L23 6.70711M23 6.70711L17 0.707107" stroke="currentColor" stroke-width="2")
+                            path(class="arrow-tail" d="M23 6.70711 L0 6.70711" stroke="currentColor" stroke-width="2" stroke-dasharray="23" stroke-dashoffset="23")
+                    li.navigation__sub-item
+                      a.navigation__sub-link(href="")
+                        span Отзывы
+                        .navigation__sub-wrap-arrow
+                          svg(viewBox="0 0 25 14" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M17 12.7071L23 6.70711M23 6.70711L17 0.707107" stroke="currentColor" stroke-width="2")
+                            path(class="arrow-tail" d="M23 6.70711 L0 6.70711" stroke="currentColor" stroke-width="2" stroke-dasharray="23" stroke-dashoffset="23")
+                    li.navigation__sub-item
+                      a.navigation__sub-link(href="")
+                        span Новости
+                        .navigation__sub-wrap-arrow
+                          svg(viewBox="0 0 25 14" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M17 12.7071L23 6.70711M23 6.70711L17 0.707107" stroke="currentColor" stroke-width="2")
+                            path(class="arrow-tail" d="M23 6.70711 L0 6.70711" stroke="currentColor" stroke-width="2" stroke-dasharray="23" stroke-dashoffset="23")
+                    li.navigation__sub-item
+                      a.navigation__sub-link(href="")
+                        span Контакты
+                        .navigation__sub-wrap-arrow
+                          svg(viewBox="0 0 25 14" xmlns="http://www.w3.org/2000/svg")
+                            path(d="M17 12.7071L23 6.70711M23 6.70711L17 0.707107" stroke="currentColor" stroke-width="2")
+                            path(class="arrow-tail" d="M23 6.70711 L0 6.70711" stroke="currentColor" stroke-width="2" stroke-dasharray="23" stroke-dashoffset="23")
+
+  +mobile-menu({
+    arr: catalog,
+  })

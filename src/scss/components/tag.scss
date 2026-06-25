@@ -1,0 +1,80 @@
+@use "../tools/functions" as *;
+
+.tag {
+  display: flex;
+  padding: 0 8px;
+  align-items: center;
+
+  * {
+    pointer-events: none;
+  }
+
+  &.yellow {
+    background-color: color('yellow', 'Gold');
+  }
+
+  &.blue {
+    background-color: color('blue', 'DarkBlue');
+  }
+
+  &.reverse {
+    flex-direction: row-reverse;
+
+    .tag__icon {
+      margin-left: 0;
+      margin-right: 8px;
+      transform: rotate(180deg);
+    }
+  }
+
+  &__text {
+    font-size: 10px;
+    line-height: 24px;
+    font-weight: 700;
+    color: color('white');
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    overflow: hidden;
+    width: 6px;
+    height: 10px;
+    margin-left: 8px;
+    margin-bottom: 0.5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    transition: width 0.3s ease-in-out;
+
+    svg {
+      width: 16px;
+      height: 100%;
+      color: color('white');
+      position: absolute;
+      top: 0;
+      right: 0;
+      transition: transform 0.3s ease-in-out;
+
+      .arrow-tail {
+        transition: stroke-dashoffset 0.3s ease-in-out;
+      }
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      .tag__icon {
+        width: 16px;
+      }
+
+      svg {
+        .arrow-tail {
+          stroke-dashoffset: 0;
+        }
+      }
+    }
+  }
+}

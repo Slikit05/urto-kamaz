@@ -1,0 +1,18 @@
+mixin picture(item)
+  -
+    const withLazy = item?.withLazy || 'auto'
+
+  picture.picture(class=item.class)
+    if item.mob
+      source(media='(max-width: 767px)' srcset=item.mob)
+    if item.tabletSm
+      source(media='(max-width: 1023px)' srcset=item.tabletSm)
+    if item.tablet
+      source(media='(max-width: 1240px)' srcset=item.tablet)
+    if item.netbook
+      source(media='(max-width: 1400px)' srcset=item.netbook)
+    if item.laptop
+      source(media='(max-width: 1600px)' srcset=item.laptop)
+    if item.x2
+      source(media='(-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx)' srcset=item.x2)
+    img(src=item.x1 alt='' loading=withLazy class='picture__image')

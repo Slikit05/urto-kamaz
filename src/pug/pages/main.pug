@@ -1,0 +1,369 @@
+extends ../layouts/base.pug
+
+block vars
+  -
+    const swiper = true
+  - 
+    const firstScreenSlider = [
+      {
+        img: 'firstScreenSlider-1'
+      },
+      {
+        img: 'firstScreenSlider-2'
+      },
+      {
+        img: 'firstScreenSlider-3'
+      },
+      //- {
+      //-   img: 'firstScreenSlider-1'
+      //- },
+      //- {
+      //-   img: 'firstScreenSlider-2'
+      //- },
+      //- {
+      //-   img: 'firstScreenSlider-3'
+      //- },
+    ]
+  - 
+    const catalog = [
+      {
+        title: 'Автотехника', 
+        subArr: [
+          {
+            img: 'img/catalog/1.png',
+            text: 'Бортовые автомобили'
+          },
+          {
+            img: 'img/catalog/2.png',
+            text: 'Самосвалы'
+          },
+          {
+            img: 'img/catalog/3.png',
+            text: 'Седельные тягочи'
+          },
+        ]
+      },
+      {
+        title: 'Спецавтотехника', 
+        subArr: [
+          {
+            img: 'img/catalog/4.png',
+            text: 'Автокраны'
+          },
+          {
+            img: 'img/catalog/5.png',
+            text: 'Автотопливозаправщики'
+          },
+          {
+            img: 'img/catalog/6.png',
+            text: 'Автобетоносмеситель'
+          },
+          {
+            img: 'img/catalog/7.png',
+            text: 'Автомобиль с КМУ'
+          },
+          {
+            img: 'img/catalog/8.png',
+            text: 'Автоцистерна'
+          },
+        ]
+      },
+      {
+        title: 'Прицепная техника', 
+        subArr: [
+          {
+            img: 'img/catalog/9.png',
+            text: 'Бортовые прицепы'
+          },
+          {
+            img: 'img/catalog/10.png',
+            text: 'Прицеп-зерновоз'
+          },
+          {
+            img: 'img/catalog/11.png',
+            text: 'Полуприцеп'
+          },
+          {
+            img: 'img/catalog/12.png',
+            text: 'Самосвальные прицепы'
+          },
+        ]
+      },
+      {
+        title: 'Автобусы', 
+        subArr: [
+          {
+            img: 'img/catalog/13.png',
+            text: 'Газовые автобусы'
+          },
+          {
+            img: 'img/catalog/14.png',
+            text: 'Городские автобусы'
+          },
+          {
+            img: 'img/catalog/15.png',
+            text: 'Междугородные автобусы'
+          },
+          {
+            img: 'img/catalog/16.png',
+            text: 'Пригородные автобусы'
+          },
+          {
+            img: 'img/catalog/17.png',
+            text: 'Электрический транспорт'
+          },
+        ]
+      },
+    ]
+  - 
+    const equipmentInStock = [
+      {
+        img: 'card-img-1'
+      },
+      {
+        img: 'card-img-2'
+      },
+      {
+        img: 'card-img-3'
+      },
+    ]
+
+  - 
+    const news = [
+      {
+        img: 'news-card-img-1',
+        caption: 'Руководители российских промышленных предприятий посетили «КАМАЗ»',
+        text: 'В рамках делового визита руководители и специалисты ведущих российских промышленных предприятий посетили Научно-технический центр «КАМАЗа».',
+        date: '14.06.2025',
+      },
+      {
+        img: 'news-card-img-2',
+        caption: 'Купи КАМАZ-54901 на СПГ и получи 17 тонн СПГ в подарок!',
+        text: 'При покупке автомобиля <a href=""><nobr>KAMAZ-54901</nobr></a> вы&nbsp;получите специальный флаер, он даст Вам доступ к подарочному объему СПГ от ООО «Газпром СПГ технологии»',
+        date: 'с 17.06.2025 по 31.12.2025',
+        event: 'акция',
+      },
+      {
+        img: 'news-card-img-3',
+        caption: 'Подарки первоклассникам от предприятия Группы ОАТ',
+        text: 'В рамках делового визита руководители и специалисты ведущих российских промышленных предприятий посетили Научно-технический центр «КАМАЗа».',
+        date: '14.06.2025',
+      },
+      {
+        img: 'news-card-img-4',
+        caption: 'Специальное предложение на технику КАМАЗ – скидка до 2 % + выгодный лизинг!',
+        text: 'ПАО "КАМАЗ" дарит скидку до 2 % клиентам АО "Росагролизинг" на весь перечень техники!',
+        date: 'с 17.06.2025 по 31.12.2025',
+      },
+      {
+        img: 'news-card-img-1',
+        caption: 'Руководители российских промышленных предприятий посетили «КАМАЗ»',
+        text: 'В рамках делового визита руководители и специалисты ведущих российских промышленных предприятий посетили Научно-технический центр «КАМАЗа».',
+        date: '14.06.2025',
+      },
+      {
+        img: 'news-card-img-2',
+        caption: 'Купи КАМАZ-54901 на СПГ и получи 17 тонн СПГ в подарок!',
+        text: 'При покупке автомобиля <a href="">KAMAZ-54901</a> вы&nbsp;получите специальный флаер, он даст Вам доступ к подарочному объему СПГ от ООО «Газпром СПГ технологии»',
+        date: 'с 17.06.2025 по 31.12.2025',
+        event: 'акция',
+      },
+      {
+        img: 'news-card-img-3',
+        caption: 'Подарки первоклассникам от предприятия Группы ОАТ',
+        text: 'В рамках делового визита руководители и специалисты ведущих российских промышленных предприятий посетили Научно-технический центр «КАМАЗа».',
+        date: '14.06.2025',
+      },
+      {
+        img: 'news-card-img-4',
+        caption: 'Специальное предложение на технику КАМАЗ – скидка до 2 % + выгодный лизинг!',
+        text: 'ПАО "КАМАЗ" дарит скидку до 2 % клиентам АО "Росагролизинг" на весь перечень техники!',
+        date: 'с 17.06.2025 по 31.12.2025',
+      },
+    ]
+
+  -
+    const dealerArrImg = [
+      {
+        img: 'dealer-img-1'
+      },
+      {
+        img: 'dealer-img-2'
+      },
+      {
+        img: 'dealer-img-3'
+      },
+      {
+        img: 'dealer-img-1'
+      },
+      {
+        img: 'dealer-img-2'
+      },
+      {
+        img: 'dealer-img-3'
+      },
+    ]
+
+  -
+    const advantages = [
+      {
+        icon: 'advantages-1',
+        caption: 'теплый прием',
+        text: 'Описание преимущества, может быть в несколько строк'
+      },
+      {
+        icon: 'advantages-2',
+        caption: 'Широкий ассортимент',
+        text: 'Описание преимущества, может быть в несколько строк'
+      },
+      {
+        icon: 'advantages-3',
+        caption: 'высокое Качество',
+        text: 'Описание преимущества, может быть в несколько строк'
+      },
+      {
+        icon: 'advantages-4',
+        caption: 'выгодные условия',
+        text: 'Описание преимущества, может быть в несколько строк'
+      },
+      {
+        icon: 'advantages-5',
+        caption: 'Быстрые поставки',
+        text: 'Описание преимущества, может быть в несколько строк'
+      },
+      {
+        icon: 'advantages-6',
+        caption: 'Удобное расположение',
+        text: 'Описание преимущества, может быть в несколько строк'
+      },
+    ]
+
+block body
+  +first-slider({
+    arr: firstScreenSlider,
+    className: 'first-screen-ofset'
+  })
+  +vehicle-catalog({
+    arr: catalog,
+    className: 'vehicle-catalog_offset'
+  })
+
+  section.wrap-bg.wrap-bg_gray
+    section.section.inner-offset-slider
+      .container
+        .row-title.section__up
+          .row-title__flex
+            h2.title-md Техника в наличии
+            +tag({
+              text: 'Смотреть все',
+              className: 'yellow',
+            })
+          .row-title__wrap
+            +navigation-slider({
+              classPrev: 'js-equipmentInStock-prev',
+              classNext: 'js-equipmentInStock-next',
+              pagination: 'js-equipmentInStock-pagination'
+            })
+        .slider-block
+          +slider-two({nameSlider: 'js-equipmentInStock'})
+            each item in equipmentInStock
+              .slider-two__slide.swiper-slide
+                +card-kamaz({
+                  img: item.img
+                }) 
+          +modal({
+            className: 'book-modal', 
+            idModal: 'BookModal',
+            caption: 'Забронировать',
+            subCaption: 'Заполните простую форму и наши специалисты свяжутся с Вами в ближайшее время'
+          })
+            .form
+              form.form__container(action='')
+                .form__wrapper
+                  .form__field
+                    span.form__description Ваше имя:
+                    input.form__input(type='text' name='name' placeholder='Представьтесь, пожалуйста') 
+                  .form__field
+                    span.form__description Телефон:<span class='yellow'>*</span>
+                    input.form__input(type='tel' name='phone' placeholder='Ваш телефон' required)
+                .form__row
+                  .form__checkbox
+                    +checkbox({
+                      text: 'Соглашаюсь с <a href="#">политикой конфиденциальности</a>'
+                    })
+                  +button({
+                    text: 'отправить',
+                    theme: 'yellow',
+                    svgIconEnd: 'mail',
+                    className: 'mail-icon',
+                    attrs: {
+                      type: 'submit'
+                    }
+                  })
+                .form__bottom
+                  span.form__info-text Поля помеченные “<span class='yellow'>*</span>” обязательны для заполнения
+
+    +show-block({})
+
+  section.section.news-and-stock
+    .container
+      .row-title.section__up
+        .row-title__flex
+          h2.title-md Новости и акции
+          +tag({
+            text: 'перейти в раздел',
+            className: 'yellow',
+          })
+        .row-title__wrap
+          +navigation-slider({
+            classPrev: 'js-newsAndStock-prev',
+            classNext: 'js-newsAndStock-next',
+            pagination: 'js-newsAndStock-pagination'
+          })
+      .slider-block
+        +slider-two({nameSlider: 'js-newsAndStock'})
+          each item in news
+            .slider-two__slide.swiper-slide
+              +card-news({
+                img: item.img,
+                caption: item.caption,
+                text: item.text,
+                date: item.date,
+                event: item.event
+              })
+
+  section.section
+    .container
+      .row-title.section__up
+        .row-title__flex
+          h2.title-md ООО «ЮРТО-ТРАКЦЕНТР» - официальный дилер ПАО «КАМАЗ»
+          +tag({
+            text: 'перейти в раздел',
+            className: 'yellow',
+          })
+    .slider-block
+      +first-slider({
+        arr: dealerArrImg,
+        className: 'change-slider offset-bottom'
+      })
+    .text-area.border-bottom
+      .container
+        .text-area__grid
+          div
+            span
+              strong Входит в&nbsp;группу компаний &laquo;ЮЖНО-РОССИЙСКОЕ ТРАНСПОРТНОЕ ОБЪЕДИНЕНИЕ (ЮРТО)&raquo;. Общая численность сотрудников более 100&nbsp;человек. Свое начало берет с&nbsp;продажи европейской коммерческой техники, в&nbsp;последствии организация сервисных станций под брендом ЮРТО.
+          div
+            span Склад запасных частей ЮРТО-ТРАКЦЕНТР насчитывает более 10&nbsp;000 позиций на&nbsp;сумму более 40&nbsp;000&nbsp;000&nbsp;рублей.
+            span Компания ЮРТО-ТРАКЦЕНТР сертифицирована в&nbsp;Системе Менеджмента Качества ISO&#x2011;9001:2015, IDT и&nbsp;соответствует требованиям ГОСТ Р&nbsp;ИСО 9001-2015.
+            span Деятельность компании &laquo;ЮРТО-ТРАКЦЕНТР&raquo; неоднократно удостаивалась высоких наград различных брендов, с&nbsp;которыми случилось поработать за&nbsp;время существования компании, за&nbsp;развитие продаж в&nbsp;регионе и&nbsp;вклад в&nbsp;развитие послепродажного обслуживания.
+
+  section.advantages.offset
+    .container
+      .advantages__list
+        each item in advantages
+          .advantages__item
+            .advantages__wrap-icon
+              +icon(item.icon)
+            .advantages__wrap-text
+              span.advantages__caption !{item.caption}
+              span.advantages__text !{item.text}

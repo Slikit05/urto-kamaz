@@ -1,0 +1,25 @@
+mixin card-news({img, caption, text, date, event})
+  .card-news
+    .card-news__wrapper
+      .card-news__wrap-link
+        a.card-news__wrap-img(href="") 
+          +picture({
+            'x1': 'img/' + img + '.jpg',
+            'x2': 'img/' + img + '@2x.jpg',
+          })
+          if event
+            .card-news__event !{event}
+        .card-news__wrap-text
+          a.card-news__line(href="") 
+            span.card-news__name !{caption}
+            .card-news__wrap-arrow
+              svg(viewBox="0 0 25 14" xmlns="http://www.w3.org/2000/svg")
+                path(d="M17 12.7071L23 6.70711M23 6.70711L17 0.707107" stroke="currentColor" stroke-width="2")
+                path(class="arrow-tail" d="M23 6.70711 L0 6.70711" stroke="currentColor" stroke-width="2" stroke-dasharray="23" stroke-dashoffset="23")
+          p.card-news__text !{text}
+      .card-news__bottom
+        span.card-news__date !{date}
+        +tag({
+          text: 'подробнее',
+          className: 'yellow',
+        })

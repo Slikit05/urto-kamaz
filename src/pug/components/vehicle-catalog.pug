@@ -1,0 +1,33 @@
+mixin vehicle-catalog({arr, className, noneTitle})
+  .vehicle-catalog(class=className)
+    .container
+      if !noneTitle
+        .row-title.vehicle-catalog__up
+          .row-title__flex
+            h2.title-md Каталог автотехники
+            +tag({
+              text: 'перейти в раздел',
+              className: 'yellow',
+            })
+      .vehicle-catalog__grid
+        each item in arr 
+          .vehicle-catalog__block
+            a.vehicle-catalog__up-block(href="")
+              .vehicle-catalog__link-up
+                span.vehicle-catalog__caption !{item.title}
+              .vehicle-catalog__arrow
+                svg(viewBox="0 0 25 14" xmlns="http://www.w3.org/2000/svg")
+                  path(d="M17 12.7071L23 6.70711M23 6.70711L17 0.707107"     stroke="currentColor" stroke-width="2")
+                  path(class="arrow-tail" d="M23 6.70711 L0 6.70711" stroke="currentColor" stroke-width="2" stroke-dasharray="23" stroke-dashoffset="23")
+            ul.vehicle-catalog__list
+              each subItem in item.subArr
+                li.vehicle-catalog__item
+                  a.vehicle-catalog__link(href="")
+                    .vehicle-catalog__link-wrap
+                      .vehicle-catalog__wrap-icon
+                        img.vehicle-catalog__icon(src=subItem.img alt="")
+                      span.vehicle-catalog__text !{subItem.text}
+                    .vehicle-catalog__sm-arrow
+                      svg(viewBox="0 0 25 14" xmlns="http://www.w3.org/2000/svg")
+                        path(d="M17 12.7071L23 6.70711M23 6.70711L17 0.707107"     stroke="currentColor" stroke-width="2")
+                        path(class="arrow-tail" d="M23 6.70711 L0 6.70711" stroke="currentColor" stroke-width="2" stroke-dasharray="23" stroke-dashoffset="23")

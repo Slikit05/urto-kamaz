@@ -1,0 +1,30 @@
+mixin button(options)
+  - const text = options.text || ''
+  - const theme = options.theme || 'default'
+  - const svgIconStart = options.svgIconStart || ''
+  - const svgIconEnd = options.svgIconEnd || ''
+  - const className = options.className || ''
+  - const textClassName = options.textClassName || ''
+  - const element = options?.element ? options.element : options.href ? 'a' : 'button'
+  - const elemHref = options.href ? { href: options.href } : {}
+  - const attrs = options.attrs ? options.attrs : {}
+
+  mixin buttonText()
+    if svgIconStart
+      .new-button__icon.new-button__icon-start
+        +icon(svgIconStart)
+    if text
+      span.new-button__text(class=textClassName)= text
+    if svgIconEnd
+      .new-button__icon.new-button__icon-end
+        +icon(svgIconEnd)
+
+  if element === 'a'
+    a.new-button(class='new-button-theme_' + theme + ' ' + className)&attributes(attrs, elemHref)
+      +buttonText
+  else if element === 'span'
+    span.new-button(class='new-button-theme_' + theme + ' ' + className)&attributes(attrs)
+      +buttonText
+  else
+    button.new-button(class='new-button-theme_' + theme + ' ' + className)&attributes(attrs, elemHref)
+      +buttonText

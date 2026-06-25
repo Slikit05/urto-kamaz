@@ -1,0 +1,5 @@
+mixin icon(name)
+  - var classes = 'icon-decorate icon-' + name
+  //- - if (className) classes += ' ' + className
+  svg(class=classes)&attributes(attributes)
+    use(xlink:href="./sprite.svg#" + name)

@@ -1,0 +1,57 @@
+@use "../tools/functions" as *;
+
+.card-categorys {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: color('white');
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &__img {
+    width: 72px;
+    display: block;
+    flex-shrink: 0;
+    margin-right: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__caption {
+    font-size: 13px;
+    line-height: 24px;
+    color: color('blue', 'DarkBlue');
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      &::before {
+        transform: scale(1.03);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card-categorys {
+    padding: 10px;
+
+    &__img {
+      width: 67px;
+      margin-right: 10px;
+    }
+  }
+}

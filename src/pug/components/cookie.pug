@@ -1,0 +1,13 @@
+mixin cookie()
+  .cookies.js-cookies
+    .container
+      .cookies__inner
+        .cookies__text
+          p Мы используем cookies для улучшения работы нашего сайта и большего удобства его использования. Продолжая использовать сайт, Вы выражаете своё согласие на <a href=''>обработку файлов cookies</a>
+        .cookies__button
+          +button({
+            text: 'согласен',
+            theme: 'yellow',
+            svgIconEnd: 'cookie-check',
+            className: 'cookie-check-icon js-cookiesApply'
+          })

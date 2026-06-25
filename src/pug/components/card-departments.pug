@@ -1,0 +1,19 @@
+mixin card-departments({caption, tell, email})
+  a.card-departments(href="") 
+    .card-departments__up
+      span.card-departments__caption !{caption}
+      .card-departments__arrow
+        svg(viewBox="0 0 25 14" xmlns="http://www.w3.org/2000/svg")
+          path(d="M17 12.7071L23 6.70711M23 6.70711L17 0.707107"     stroke="currentColor" stroke-width="2")
+          path(class="arrow-tail" d="M23 6.70711 L0 6.70711" stroke="currentColor" stroke-width="2" stroke-dasharray="23" stroke-dashoffset="23")
+    .card-departments__content
+      if tell
+        .card-departments__row
+          .card-departments__icon
+            img(src="img/svg/phone.svg", alt="")
+          span.card-departments__tell !{tell}
+      if email
+        .card-departments__row
+          .card-departments__icon
+            img(src="img/svg/tg.svg", alt="")
+          span.card-departments__email !{email}

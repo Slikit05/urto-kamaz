@@ -1,0 +1,437 @@
+extends ../layouts/base.pug
+
+block vars
+  -
+    const swiper = true
+  - 
+    const breadcrumbs = [
+      {
+        url: '#',
+        title: 'Главная'
+      },
+      {
+        url: '#',
+        title: 'Каталог автотехники'
+      },
+      {
+        url: '#',
+        title: 'Автотехника'
+      },
+      {
+        title: 'Автомобиль КАМАЗ 4308-69 8,5 м.'
+      }
+    ]
+  - 
+    const reviews = [
+      {
+        text: '«Могу сказать, что это отличный рабочий автомобиль: простой в обслуживании, экономичный и достаточно вместительный для городских и пригородных перевозок. Маневренность позволяет легко передвигаться даже в плотном городском трафике. Могу сказать, что это отличный рабочий автомобиль: простой в обслуживании». «Могу сказать, что это отличный рабочий автомобиль: простой в обслуживании, экономичный и достаточно вместительный для городских и пригородных перевозок. Маневренность позволяет легко передвигаться даже в плотном городском трафике. Могу сказать, что это отличный рабочий автомобиль: простой в обслуживании».',
+        btn: true,
+      },
+      {
+        text: '«Могу сказать, что это отличный рабочий автомобиль: простой в обслуживании, экономичный и достаточно вместительный для городских и пригородных перевозок. Маневренность позволяет легко передвигаться даже в плотном городском трафике».',
+        btn: false,
+      },
+      {
+        text: '«Могу сказать, что это отличный рабочий автомобиль: простой в обслуживании, экономичный и достаточно вместительный для городских и пригородных перевозок. Маневренность позволяет легко передвигаться даже в плотном городском трафике. Могу сказать, что это отличный рабочий автомобиль: простой в обслуживании». «Могу сказать, что это отличный рабочий автомобиль: простой в обслуживании, экономичный и достаточно вместительный для городских и пригородных перевозок. Маневренность позволяет легко передвигаться даже в плотном городском трафике. Могу сказать, что это отличный рабочий автомобиль: простой в обслуживании».',
+        btn: true,
+      },
+    ]
+  - 
+    const equipmentInStock = [
+      {
+        img: 'card-img-1'
+      },
+      {
+        img: 'card-img-2'
+      },
+      {
+        img: 'card-img-3'
+      },
+      {
+        img: 'card-img-1'
+      },
+      {
+        img: 'card-img-2'
+      },
+      {
+        img: 'card-img-3'
+      },
+    ]
+  - 
+    const firstScreenSlider = [
+      {
+        img: 'page-auto-slider-1'
+      },
+      {
+        img: 'page-auto-slider-2'
+      },
+      {
+        img: 'page-auto-slider-3'
+      },
+      {
+        img: 'page-auto-slider-1'
+      },
+      {
+        img: 'page-auto-slider-2'
+      },
+      {
+        img: 'page-auto-slider-3'
+      },
+       {
+        img: 'page-auto-slider-1'
+      },
+      {
+        img: 'page-auto-slider-2'
+      },
+    ]
+  - 
+    const firstSliderAutoTumbs = [
+      {
+        img: 'page-auto-slider-sm-1'
+      },
+      {
+        img: 'page-auto-slider-sm-2'
+      },
+      {
+        img: 'page-auto-slider-sm-3'
+      },
+      {
+        img: 'page-auto-slider-sm-1'
+      },
+      {
+        img: 'page-auto-slider-sm-2'
+      },
+      {
+        img: 'page-auto-slider-sm-3'
+      },
+      {
+        img: 'page-auto-slider-sm-1'
+      },
+      {
+        img: 'page-auto-slider-sm-2'
+      },
+    ]
+
+block body
+  section.up-section-bg.up-section-bg_change.gray-bg
+    section.bread-crumbs
+      .container
+        +breadcrumbs({
+          items: breadcrumbs,
+        })
+
+    section.line-title-page.line-title-page_lg-offset
+      .container
+        .line-title-page__wrapper
+          h1.title-page Автомобиль КАМАЗ 4308-69 8,5 м.
+          .line-title-page__row
+            +tag({
+              text: 'назад к списку',
+              className: 'yellow reverse',
+            })
+
+    section.first-slider.change-slider
+      .first-slider__container.swiper.js-firstSliderAuto
+        .first-slider__wrapper.swiper-wrapper
+          each item in firstScreenSlider
+            .first-slider__slide.swiper-slide
+              .first-slider__item
+                +picture({
+                  'x1': 'img/' + item.img + '.jpg',
+                  'x2': 'img/' + item.img + '@2x.jpg',
+                })
+      //- .first-slider__pagination.js-firstSliderAutoPagination
+
+      .first-slider__arrows
+        .container
+          .first-slider__flex-arrows
+            .first-slider__arrow.prev.js-firstSliderAutoButtonPrev
+              svg(width="13" height="22" viewBox="0 0 13 22" xmlns="http://www.w3.org/2000/svg")
+                path(d="M11.4142 0.707108L1.41419 10.7071L11.4142 20.7071" stroke="currentColor" fill="transparent" stroke-width="2")
+                path(class="arrow-tail" d="M1.41406 10.7071 L31.4141 10.7071" stroke="currentColor" stroke-width="2" stroke-dasharray="30" stroke-dashoffset="30")
+              .first-slider__arrow-mob
+                .first-slider__wrap-icon
+                  svg(viewBox="0 0 26 10" xmlns="http://www.w3.org/2000/svg")
+                    path(d="M5.41406 8.70715L1.41406 4.70715M1.41406 4.70715L5.41406 0.707152" stroke="currentColor" stroke-width="2")
+                    path(class="arrow-tail" d="M1.41406 4.70715 L25.4141 4.70715" stroke="currentColor" stroke-width="2")
+                span Предыдущая
+            .first-slider__arrow.next.js-firstSliderAutoButtonNext
+              svg(width="13" height="22" viewBox="0 0 13 22" xmlns="http://www.w3.org/2000/svg")
+                path(d="M11.4142 0.707108L1.41419 10.7071L11.4142 20.7071" stroke="currentColor" fill="transparent" stroke-width="2")
+                path(class="arrow-tail" d="M1.41406 10.7071 L31.4141 10.7071" stroke="currentColor" stroke-width="2" stroke-dasharray="30" stroke-dashoffset="30")
+              .first-slider__arrow-mob
+                span Следующая
+                .first-slider__wrap-icon
+                  svg(viewBox="0 0 26 10" xmlns="http://www.w3.org/2000/svg")
+                    path(d="M5.41406 8.70715L1.41406 4.70715M1.41406 4.70715L5.41406 0.707152" stroke="currentColor" stroke-width="2")
+                    path(class="arrow-tail" d="M1.41406 4.70715 L25.4141 4.70715" stroke="currentColor" stroke-width="2")
+
+    section.first-slider-tumbs
+      .container
+        .sm-container
+          .first-slider-tumbs__container.swiper.js-firstSliderAutoTumbs
+            .first-slider-tumbs__wrapper.swiper-wrapper
+              each item in firstSliderAutoTumbs
+                .first-slider-tumbs__slide.swiper-slide
+                  .first-slider-tumbs__item
+                    +picture({
+                      'x1': 'img/' + item.img + '.jpg',
+                      'x2': 'img/' + item.img + '@2x.jpg',
+                    })
+    
+    section.auto-page-line
+      .container
+        .sm-container
+          .auto-page-line__wrapper
+            span.auto-page-line__price 7 300 000 ₽
+            +button({
+              text: 'купить',
+              theme: 'yellow',
+              elemHref: '#',
+              svgIconEnd: 'phone-2',
+              className: 'phone-2-icon js-showModal',
+              attrs: {
+                'data-click-modal': 'PayModal'
+              }
+            })
+            +button({
+              text: 'лизинг',
+              theme: 'yellow',
+              elemHref: '#',
+              svgIconEnd: 'procent',
+              className: 'procent-icon js-showModal',
+              attrs: {
+                'data-click-modal': 'leasingModal'
+              }
+            })
+            +button({
+              text: 'нужна помощь?',
+              theme: 'yellow',
+              elemHref: '#',
+              svgIconEnd: 'gard',
+              className: 'gard-icon js-showModal',
+              attrs: {
+                'data-click-modal': 'HelpModal'
+              }
+            })
+
+            
+
+    section.auto-page-accordions
+      .container
+        .sm-container
+          .auto-page-accordions__wrapper
+            .auto-page-accordions__block
+              .auto-page-accordions__up
+                span.auto-page-accordions__caption ВЕСОВЫЕ ПАРАМЕТРЫ И НАГРУЗКИ
+                .auto-page-accordions__arrow
+                  +icon('accordion-arrow')
+              .auto-page-accordions__dropdown
+                .auto-page-accordions__content
+                  .params-table
+                    .params-table__row
+                      .params-table__label Грузоподъемность автомобиля, кг
+                      .params-table__value 32435
+                    .params-table__row
+                      .params-table__label Полная масса а/м, кг
+                      .params-table__value 50000
+                    .params-table__row
+                      .params-table__label нагрузка на заднюю тележку, кг
+                      .params-table__value 32000
+                    .params-table__row
+                      .params-table__label нагрузка на первую и вторую оси, кг
+                      .params-table__value 18000
+                    .params-table__row
+                      .params-table__label Снаряженная масса, кг
+                      .params-table__value 17565
+                    .params-table__row
+                      .params-table__label нагрузка на заднюю тележку, кг
+                      .params-table__value 8045
+                    .params-table__row
+                      .params-table__label нагрузка на первую и вторую оси, кг
+                      .params-table__value 9520
+            .auto-page-accordions__block
+              .auto-page-accordions__up
+                span.auto-page-accordions__caption ДВИГАТЕЛЬ
+                .auto-page-accordions__arrow
+                  +icon('accordion-arrow')
+              .auto-page-accordions__dropdown
+                .auto-page-accordions__content
+                  .params-table
+                    .params-table__row
+                      .params-table__label Модель двигателя
+                      .params-table__value Mercedes-Benz OM 457LA.V/4Макс. 
+                    .params-table__row
+                      .params-table__label полезный крутящий момент, Нм (кгсм)
+                      .params-table__value 2100 (214)
+                    .params-table__row
+                      .params-table__label частоте вращения коленчатого вала, об/мин
+                      .params-table__value 1100
+                    .params-table__row
+                      .params-table__label Максимальная полезная мощность, кВт (л.с.)
+                      .params-table__value 315 (428)
+                    .params-table__row
+                      .params-table__label при частоте вращения коленчатого вала, об/мин
+                      .params-table__value 1900
+                    .params-table__row
+                      .params-table__label Рабочий объем, л
+                      .params-table__value 11,97
+                    .params-table__row
+                      .params-table__label Расположение и число цилиндров
+                      .params-table__value рядное, 6
+                    .params-table__row
+                      .params-table__label Тип двигателя
+                      .params-table__value дизельный с турбонаддувом, с промежуточным охлаждением наддувочного воздуха
+            .auto-page-accordions__block
+              .auto-page-accordions__up
+                span.auto-page-accordions__caption КОРОБКА ПЕРЕДАЧ
+                .auto-page-accordions__arrow
+                  +icon('accordion-arrow')
+              .auto-page-accordions__dropdown
+                .auto-page-accordions__content
+                  .params-table
+                    .params-table__row
+                      .params-table__label Модель
+                      .params-table__value КПZF 16S2225 ТО
+                    .params-table__row
+                      .params-table__label Тип
+                      .params-table__value механическая, 16-тиступенчатая
+                    .params-table__row
+                      .params-table__label Управление
+                      .params-table__value механическое, дистанционное
+
+  section.section.inner-offset-bottom-slider
+    .container
+      .row-title.section__up
+        .row-title__flex
+          h2.title-md Отзывы покупателей
+        .row-title__wrap
+          +navigation-slider({
+            classPrev: 'js-equipmentInStock-prev',
+            classNext: 'js-equipmentInStock-next',
+            pagination: 'js-equipmentInStock-pagination'
+          })
+      .slider-block
+        +slider-two({nameSlider: 'js-equipmentInStock'})
+          each item in reviews
+            .slider-two__slide.swiper-slide
+              +card-review({
+                text: item.text,
+                btn: item.btn
+              })
+
+  section.section.bg-gray.inner-offset-slider
+    .container
+      .row-title.section__up
+        .row-title__flex
+          h2.title-md Техника в наличии
+          +tag({
+            text: 'Смотреть все',
+            className: 'yellow',
+          })
+        .row-title__wrap
+          +navigation-slider({
+            classPrev: 'js-newsAndStock-prev',
+            classNext: 'js-newsAndStock-next',
+            pagination: 'js-newsAndStock-pagination'
+          })
+      .slider-block
+        +slider-two({nameSlider: 'js-newsAndStock'})
+          each item in equipmentInStock
+            .slider-two__slide.swiper-slide
+              +card-kamaz({
+                img: item.img
+              }) 
+
+  +modal({ 
+    idModal: 'PayModal',
+    caption: 'Купить',
+    subCaption: 'Заполните простую форму и наши специалисты свяжутся с Вами в ближайшее время'
+  })
+    .form
+      form.form__container(action='')
+        .form__wrapper
+          .form__field
+            span.form__description Ваше имя:
+            input.form__input(type='text' name='name' placeholder='Представьтесь, пожалуйста') 
+          .form__field
+            span.form__description Телефон:<span class='yellow'>*</span>
+            input.form__input(type='tel' name='phone' placeholder='Ваш телефон' required)
+        .form__row
+          .form__checkbox
+            +checkbox({
+              text: 'Соглашаюсь с <a href="#">политикой конфиденциальности</a>'
+            })
+          +button({
+            text: 'отправить',
+            theme: 'yellow',
+            svgIconEnd: 'mail',
+            className: 'mail-icon',
+            attrs: {
+              type: 'submit'
+            }
+          })
+        .form__bottom
+          span.form__info-text Поля помеченные “<span class='yellow'>*</span>” обязательны для заполнения
+  
+  +modal({
+    idModal: 'leasingModal',
+    caption: 'Лизинг',
+    subCaption: 'Заполните простую форму и наши специалисты свяжутся с Вами в ближайшее время'
+  })
+    .form
+      form.form__container(action='')
+        .form__wrapper
+          .form__field
+            span.form__description Ваше имя:
+            input.form__input(type='text' name='name' placeholder='Представьтесь, пожалуйста') 
+          .form__field
+            span.form__description Телефон:<span class='yellow'>*</span>
+            input.form__input(type='tel' name='phone' placeholder='Ваш телефон' required)
+        .form__row
+          .form__checkbox
+            +checkbox({
+              text: 'Соглашаюсь с <a href="#">политикой конфиденциальности</a>'
+            })
+          +button({
+            text: 'отправить',
+            theme: 'yellow',
+            svgIconEnd: 'mail',
+            className: 'mail-icon',
+            attrs: {
+              type: 'submit'
+            }
+          })
+        .form__bottom
+          span.form__info-text Поля помеченные “<span class='yellow'>*</span>” обязательны для заполнения
+
+  +modal({ 
+    idModal: 'HelpModal',
+    caption: 'Нужна помощь?',
+    subCaption: 'Заполните простую форму и наши специалисты свяжутся с Вами в ближайшее время'
+  })
+    .form
+      form.form__container(action='')
+        .form__wrapper
+          .form__field
+            span.form__description Ваше имя:
+            input.form__input(type='text' name='name' placeholder='Представьтесь, пожалуйста') 
+          .form__field
+            span.form__description Телефон:<span class='yellow'>*</span>
+            input.form__input(type='tel' name='phone' placeholder='Ваш телефон' required)
+        .form__row
+          .form__checkbox
+            +checkbox({
+              text: 'Соглашаюсь с <a href="#">политикой конфиденциальности</a>'
+            })
+          +button({
+            text: 'отправить',
+            theme: 'yellow',
+            svgIconEnd: 'mail',
+            className: 'mail-icon',
+            attrs: {
+              type: 'submit'
+            }
+          })
+        .form__bottom
+          span.form__info-text Поля помеченные “<span class='yellow'>*</span>” обязательны для заполнения

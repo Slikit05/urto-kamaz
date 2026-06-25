@@ -1,0 +1,88 @@
+@use "../tools/functions" as *;
+
+.advantages {
+  &.offset {
+    margin-bottom: 47px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(1px, 1fr));
+    gap: 32px;
+  }
+
+  &__item {
+    cursor: pointer;
+
+    @media (hover: hover) {
+      &:hover {
+        svg {
+          color: color("blue", "DarkBlue");
+        }
+      }
+    }
+  }
+
+  &__wrap-icon {
+    width: 46px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 24px;
+
+    svg {
+      max-width: 100%;
+      max-height: 100%;
+      color: color("yellow", "Gold");
+      transition: color 0.3s ease-in-out;
+    }
+  }
+
+  &__caption {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: color("black", "Dark");
+    display: block;
+    margin-bottom: 13px;
+    letter-spacing: 0.03em;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 20px;
+    color: color("gray");
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .advantages {
+    &__list {
+      grid-template-columns: repeat(3, minmax(1px, 1fr));
+      row-gap: 44px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .advantages {
+    &.offset {
+      margin-bottom: 35px;
+    }
+
+    &__list {
+      grid-template-columns: repeat(1, minmax(1px, 1fr));
+      row-gap: 26px;
+    }
+
+    &__wrap-icon {
+      margin-bottom: 11px;
+    }
+
+    &__caption {
+      margin-bottom: 6px;
+    }
+  }
+}

@@ -1,0 +1,109 @@
+extends ../layouts/base.pug
+
+block vars
+  -
+    const swiper = true
+  - 
+    const breadcrumbs = [
+      {
+        url: '#',
+        title: 'Главная'
+      },
+      {
+        title: 'Финансовый сервис'
+      }
+    ]
+
+block body
+  section.bread-crumbs
+    .container
+      +breadcrumbs({
+        items: breadcrumbs,
+      })
+
+  section.line-title-page.line-title-page_change-offset-1
+    .container
+      .line-title-page__wrapper
+        h1.title-page Финансовый сервис
+        
+
+  section.content-page
+    .container
+      .wrapper-text-area.wrapper-text-area_no-bottom-offset.wrapper-text-area_no-top-offset
+        .sm-container        
+          .text-area.text-area_change
+            figure.up-img
+              +picture({
+                'x1': 'img/financial-service.jpg',
+                'x2': 'img/financial-service@2x.jpg',
+              })
+            h2 СТРАХОВОЙ ПРОДУКТ «ПРОДЛЕННАЯ ГАРАНТИЯ»
+            p Продленная гарантия – страхование автомобилей KAMAZ от поломок элементов и частей автомобилей, входящих в перечень страхового покрытия, по истечении срока заводской гарантии.
+            div.text-area__grid-text
+              div
+                h3 КОМФОРТНО 
+                ul
+                  li Защита от непредвиденных расходов: в случае возникновения поломки в течение действия договора страхования, после окончания действия заводской гарантии.
+                  li Оперативное урегулирование убытка на всей территории Российской Федерации.
+                  li Качественный ремонт с использованием оригинальных запчастей и соблюдением норм и технологии производителя.
+                  li При продаже застрахованного автомобиля KAMAZ права по договору страхования могут быть переданы новому владельцу автомобиля KAMAZ.
+              div
+                h3 ДОСТУПНО
+                ul
+                  li Разные варианты покрытия и сроки страхования на выбор.
+                  li Договор страхования может быть заключен в отношении новых автомобилей KAMAZ и автомобилей KAMAZ с пробегом.
+                  li Существенная минимизация расходов собственника автомобиля в результате непредвиденной поломки, произошедшей после истечения гарантии завода изготовителя
+            p Страховой продукт &laquo;Продленная гарантия&raquo; распространяется на&nbsp;следующие транспортные средства марки KAMAZ*: KAMAZ-5490 (все модификации), KAMAZ-65116-6010-48 (A5), KAMAZ-65225-6015-53, KAMAZ-65806-68 (T5), KAMAZ-5490-892-87, KAMAZ-54909-090-В5, KAMAZ-65206- 032-68, KAMAZ-65209-001-87 (S5), KAMAZ-65209-002-87 (S5); KAMAZ-65115-406058-50 &laquo;SOLAR&raquo;, KAMAZ-65115-6058-50, KAMAZ-65115-776058-42, KAMAZ-65115-776058-48, KAMAZ-6520-21010-53&nbsp;ЛЮКС, KAMAZ-6520-6041-53, KAMAZ-65201-21010-43&nbsp;ЛЮКС, KAMAZ-65222-6012-53, KAMAZ-6580-K5, KAMAZ-43255-6010-69 (G5).)
+            p.info-text *На новые автомобили и с пробегом.
+            +button({
+              text: 'Подробнее на сайте ПАО «КАМАЗ»',
+              theme: 'yellow',
+              elemHref: '#',
+              svgIconEnd: 'share',
+              className: 'share-icon'
+            })
+
+  section.section.partners
+    .container
+      .sm-container
+        .row-title.section__up
+          .row-title__flex
+            h2.title-sm ПАРТНЕРЫ
+        .partners__wrapper
+          .partners__wrap-text
+            .partners__logo
+              img(src="img/partner-logo-1.png", alt="")
+            p.partners__text АО «АльфаСтрахование» – крупный федеральный страховщик (Согласно статистике Центрального Банка Российской Федерации, страховая группа АльфаСтрахование занимает 2-е место в рейтинге крупнейших страховых групп России на всем страховом рынке (Включая рынок ОМС) - страховщик по продленной гарантии.
+          .partners__wrap-text
+            .partners__logo
+              img(src="img/partner-logo-2.png", alt="")
+            p.partners__text ООО «Гарантек» - Центр Урегулирования Убытков,  предоставляющий обслуживание Владельца а/м на момент подачи заявления о наступлении страхового события.
+          .partners__item
+            h2.partners__title СОТРУДНИЧЕСТВО С ЛИЗИНГОВЫМИ КОМПАНИЯМИ - ПАРТНЕРАМИ ПРЕИМУЩЕСТВА&nbsp;ЛИЗИНГА:
+          .partners__item
+            ul.partners__list
+              li Лизинг позволяет сохранить оборотные средства
+              li Лизинг позволяет экономить на налогах
+              li Лизинг стимулирует развитие бизнеса
+              li Лизинг позволяет получить государственную субсидию
+              li Лизинг позволяет извлекать прибыль сразу после оформления сделки
+        .partners__grid
+          .partners__block
+            img(src="img/partner-logo-3.png", alt="")
+          .partners__block
+            img(src="img/partner-logo-4.png", alt="")
+          .partners__block
+            img(src="img/partner-logo-5.png", alt="")
+          .partners__block
+            img(src="img/partner-logo-6.png", alt="")
+          .partners__block
+            img(src="img/partner-logo-7.png", alt="")
+          .partners__block
+            img(src="img/partner-logo-8.png", alt="")
+        +button({
+          text: 'Подробнее на сайте ПАО «КАМАЗ»',
+          theme: 'yellow',
+          elemHref: '#',
+          svgIconEnd: 'share',
+          className: 'share-icon'
+        })

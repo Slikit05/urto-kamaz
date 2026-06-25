@@ -1,0 +1,16 @@
+<svg width="48" height="36" viewBox="0 0 48 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 25H20" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+<path d="M22.51 6H6.48999C5.58099 6 4.78699 6.61001 4.55499 7.49001C4.28799 8.50201 4 10.859 4 12C4 14.125 4 17 4 17V30C4 31.104 4.896 32 6 32H23C24.104 32 25 31.104 25 30V17C25 17 25 14.125 25 12C25 10.859 24.712 8.50201 24.445 7.49001C24.213 6.61001 23.419 6 22.51 6Z" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+<path d="M4 20L1.72601 19.353C1.29601 19.23 1 18.838 1 18.391V14.479" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+<path d="M25 20L27.274 19.353C27.704 19.23 28 18.838 28 18.391V14.479" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+<path d="M4 12H25" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M4 30V34.25C4 34.664 4.448 35 5 35H8C8.552 35 9 34.664 9 34.25V32" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M20 32V34.25C20 34.664 20.448 35 21 35H24C24.552 35 25 34.664 25 34.25V30" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M4 27L5.414 28.414C5.789 28.789 6.298 29 6.828 29H8" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+<path d="M25 27L23.586 28.414C23.211 28.789 22.702 29 22.171 29H21" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+<path d="M6 3V1H28V8" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M28 1H29L47 14V18.5" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M25 17C25 19.209 23.209 21 21 21H8C5.791 21 4 19.209 4 17" stroke="currentColor" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M12 29H17" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round"/>
+<path d="M44.1497 20L34.6494 29.3749L30.8497 25.6251L28 28.4373L34.6494 35L47 22.8122L44.1497 20Z" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linejoin="round"/>
+</svg>

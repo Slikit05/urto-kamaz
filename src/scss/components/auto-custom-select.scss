@@ -1,0 +1,82 @@
+@use "../tools/functions" as *;
+
+.auto-custom-select {
+  position: relative;
+  display: none;
+}
+
+/* Скрываем нативный select */
+.auto-custom-select:not([data-customized="true"]) {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.custom-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.custom-select {
+  width: 100%;
+
+  &.open {
+    .selected-option svg {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.selected-option {
+  padding: 10px 16px 12px;
+  border: 1px solid color('gray', '80');
+  cursor: pointer;
+  background: color('white');
+  font-size: 18px;
+  line-height: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  svg {
+    width: 14px;
+    height: 14px;
+    color: color('yellow', 'Gold');
+    margin-top: 1px;
+    transition: transform 0.3s ease-in-out;
+  }
+}
+
+.options {
+  display: none;
+  position: absolute;
+  width: 100%;
+  border: 1px solid color('gray', '80');
+  border-top: none;
+  background: color('white');
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+}
+
+.options li {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.options li:hover {
+  background: #f0f0f0;
+}
+
+.open .options {
+  display: block;
+}
+
+@media screen and (max-width: 767px) {
+  .selected-option {
+    padding: 10px 16px 10px;
+  }
+}

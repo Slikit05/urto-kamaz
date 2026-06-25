@@ -1,0 +1,15 @@
+mixin tag({text, className, showModal})
+  if !showModal
+    a.tag(class=className href="")
+      span.tag__text !{text}
+      .tag__icon
+        svg(width="18" height="10" viewBox="0 0 18 10" xmlns="http://www.w3.org/2000/svg")
+          path(d="M12 8.70709L16 4.70709M16 4.70709L12 0.707092" stroke="currentColor" stroke-width="2")
+          path(class="arrow-tail" d="M16 4.70709L0 4.70709" stroke="currentColor" stroke-width="2" stroke-dasharray="16" stroke-dashoffset="16")
+  else
+    a.tag(class=className href="" data-click-modal=showModal)
+      span.tag__text !{text}
+      .tag__icon
+        svg(width="18" height="10" viewBox="0 0 18 10" xmlns="http://www.w3.org/2000/svg")
+          path(d="M12 8.70709L16 4.70709M16 4.70709L12 0.707092" stroke="currentColor" stroke-width="2")
+          path(class="arrow-tail" d="M16 4.70709L0 4.70709" stroke="currentColor" stroke-width="2" stroke-dasharray="16" stroke-dashoffset="16")

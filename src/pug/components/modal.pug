@@ -1,0 +1,12 @@
+mixin modal({className, idModal, caption, subCaption})
+  .modal(id=idModal)
+    .modal__overlay
+      .modal__block(class=className)
+        .modal__up
+          h4.modal__caption !{caption}
+          span.modal__sub-caption !{subCaption}
+          span.close
+        .modal__down
+          .modal__content
+            block
+            

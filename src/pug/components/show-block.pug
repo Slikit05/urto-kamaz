@@ -1,0 +1,23 @@
+mixin show-block({})
+  .show-block
+    .container
+      .show-block__wrapper
+        .show-block__wrap-img
+          +picture({
+            'x1': 'img/show-block-bg.jpg',
+            'x2': 'img/show-block-bg@2x.jpg',
+            'tablet': 'img/show-block-bg_tablet.jpg',
+            'mob': 'img/show-block-bg_mobile.jpg',
+          })
+        .show-block__wrap-text
+          .show-block__logo
+            +picture({
+              'x1': 'img/logo-show-block.png',
+              'mob': 'img/logo-show-block_mobile.png'
+            })
+          h2.show-block__title Лизинг автомобилей и&nbsp;техники для бизнеса
+          +button({
+            text: 'подробнее о лизинге',
+            theme: 'yellow',
+            elemHref: '#',
+          })

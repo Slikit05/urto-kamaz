@@ -1,0 +1,99 @@
+@use "../tools/functions" as *;
+
+.cookies {
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  background-color: color("white");
+  border: 1px solid color('gray', 'LightGrey');
+
+  &__inner {
+    padding: 32px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__text {
+    max-width: 864px;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    margin-right: 32px;
+    color: color("gray", "Graphit");
+
+    a {
+      color: color("yellow", "Gold");
+      text-decoration: underline;
+
+      @media (hover: hover) {
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &__button {
+    max-width: 224px;
+    width: 100%;
+    flex-shrink: 0;
+
+    .new-button {
+      width: 100%;
+    }
+  }
+}
+
+.cookies_visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+@media screen and (max-width: 1240px) {
+  .cookies {
+    &__inner {
+      padding: 27px 0;
+    }
+
+    &__button {
+      max-width: 207px;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .cookies {
+    &__inner {
+      padding: 23px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cookies {
+    &__inner {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 15px 0;
+    }
+
+    &__text {
+      margin-right: 0;
+      margin-bottom: 16px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &__button {
+      max-width: 100%;
+    }
+  }
+}

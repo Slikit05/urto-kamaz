@@ -1,0 +1,9 @@
+mixin accordion({title})
+  .new-accordion.js-accordion
+    .new-accordion__head.js-accordionButton
+      span.new-accordion__caption !{title}
+      .new-accordion__wrap-arrow
+        +icon('arrow')
+    .new-accordion__dropdown
+      .new-accordion__content
+        block

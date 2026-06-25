@@ -1,0 +1,166 @@
+@use "../tools/functions" as *;
+
+.card-review {
+  padding: 21px 24px 17px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: color('white');
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    border: 1px solid color("gray", "LightGrey");
+    transition: transform 0.3s ease-in-out;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      &::before {
+        transform: scale(1.03);
+      }
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 16px;
+    flex-grow: 1;
+  }
+
+  &__name {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    color: color("blue", "DarkBlue");
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    color: color("gray", "Graphit");
+    display: inline;
+
+    p {
+      display: inline;
+    }
+  }
+
+  &__arrow {
+    width: 8px;
+    height: 10px;
+    justify-content: flex-end;
+    overflow: hidden;
+    transition: width 0.3s ease-in-out;
+    display: none;
+
+    &.visible {
+      display: inline-flex;
+    }
+
+    &.expanded {
+      transform: rotate(180deg);
+    }
+
+    svg {
+      min-width: 18px;
+      height: 10px;
+      color: color("yellow", "Gold");
+
+      .arrow-tail {
+        transition: stroke-dashoffset 0.3s ease-in-out;
+      }
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        width: 16px;
+
+        svg {
+          .arrow-tail {
+            stroke-dashoffset: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 14px;
+    border-top: 1px solid color('gray', '100');
+  }
+
+  &__row {
+    display: flex;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__caption {
+    font-size: 14px;
+    line-height: 24px;
+    color: color('gray');
+    margin-right: 3px;
+  }
+
+  &__value {
+    font-size: 14px;
+    line-height: 24px;
+    color: color('gray', 'Graphit');
+    font-weight: 700;
+  }
+
+  &__right {
+    padding-top: 10px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .card-review {
+    padding: 21px 24px 24px;
+
+    &__name {
+      font-size: 18px;
+      line-height: 24px;
+    }
+
+    &__bottom {
+      flex-direction: column;
+      min-height: 97px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card-review {
+    padding: 13px 20px 20px;
+
+    &__text {
+      font-size: 15px;
+      line-height: 20px;
+      letter-spacing: 0;
+    }
+
+    &__bottom {
+      flex-direction: column;
+      min-height: inherit;
+    }
+  }
+}

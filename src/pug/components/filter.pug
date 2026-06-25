@@ -1,0 +1,56 @@
+mixin filter({})
+  .filter
+    .filter__up
+      .filter__wrap-arrow
+        +icon('arrow')
+      span.filter__caption Фильтр
+    .filter__dropdown
+      .filter__content
+        .filter__field
+          .filter__row
+            span.filter__description Сортировать по:
+          .filter__select
+            select.auto-custom-select#sort(name="sort")
+              option(value="Убыванию цены") Убыванию цены
+              option(value="Возрастание цены") Возрастание цены
+        .filter__field
+          .filter__row
+            span.filter__description Стоимость:
+          .filter__grid
+            .filter__input
+              input(type="text" name="" placeholder="от")
+            .filter__line-decoration
+            .filter__input
+              input(type="text" name="" placeholder="до")
+        .filter__field
+          .filter__row
+            span.filter__description Грузоподъемность:
+          .filter__select
+            select.auto-custom-select#load-capacity(name="load-capacity")
+              option(value="Любая") Любая
+              option(value="Вариант 1") Вариант 1
+              option(value="Вариант 2") Вариант 2
+        .filter__field
+          .filter__row
+            span.filter__description Колесная база:
+          .filter__select
+            select.auto-custom-select#wheelbase(name="wheelbase")
+              option(value="Любая") Любая
+              option(value="Вариант 1") Вариант 1
+              option(value="Вариант 2") Вариант 2
+        .filter__field
+          .filter__row
+            span.filter__description Мощность двигателя:
+          .filter__select
+            select.auto-custom-select#engine-power(name="engine-power")
+              option(value="Любая") Любая
+              option(value="Вариант 1") Вариант 1
+              option(value="Вариант 2") Вариант 2
+        .filter__field
+          +button({
+            text: 'Применить',
+            theme: 'yellow',
+            elemHref: '#',
+            svgIconEnd: 'apply',
+            className: 'apply-icon'
+          })
